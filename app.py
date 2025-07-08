@@ -5,6 +5,12 @@ import cv2
 import numpy as np
 import dlib
 import random
+import asyncio
+import sys
+
+if sys.platform.startswith('win'):
+    asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
+
 
 # Load dlib face detector and shape predictor
 predictor = dlib.shape_predictor("shape_predictor_68_face_landmarks.dat")
